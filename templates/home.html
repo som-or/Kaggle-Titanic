@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Titanic Survival Predictor</title>
+    <!-- Simple styling; drop in Bootstrap or Tailwind if you’d like something fancier -->
+    <style>
+        body        { font-family: Arial, sans-serif; margin: 2rem; }
+        h1          { text-align: center; }
+        form        { max-width: 600px; margin: auto; }
+        label       { display: block; margin-top: 0.8rem; }
+        input,
+        select      { width: 100%; padding: 0.4rem; }
+        button      { margin-top: 1.2rem; padding: 0.6rem 1.4rem; }
+        .result     { margin-top: 2rem; text-align: center; font-size: 1.2rem; }
+    </style>
+</head>
+<body>
+
+<h1>Titanic Survival Predictor</h1>
+
+<form action="{{ url_for('predict') }}" method="post">
+    <label>PassengerId
+        <input type="number" name="PassengerId" required>
+    </label>
+
+    <label>Pclass
+        <select name="Pclass" required>
+            <option value="1">1 (Upper)</option>
+            <option value="2">2 (Middle)</option>
+            <option value="3">3 (Lower)</option>
+        </select>
+    </label>
+
+    <label>Name
+        <input type="text" name="Name" required>
+    </label>
+
+    <label>Sex
+        <select name="Sex" required>
+            <option value="male">male</option>
+            <option value="female">female</option>
+        </select>
+    </label>
+
+    <label>Age
+        <input type="number" name="Age" step="0.01">
+    </label>
+
+    <label>SibSp (siblings / spouses aboard)
+        <input type="number" name="SibSp" required>
+    </label>
+
+    <label>Parch (parents / children aboard)
+        <input type="number" name="Parch" required>
+    </label>
+
+    <label>Ticket
+        <input type="text" name="Ticket">
+    </label>
+
+    <label>Fare
+        <input type="number" name="Fare" step="0.01">
+    </label>
+
+    <label>Cabin
+        <input type="text" name="Cabin">
+    </label>
+
+    <label>Embarked
+        <select name="Embarked">
+            <option value="">-- select --</option>
+            <option value="C">Cherbourg (C)</option>
+            <option value="Q">Queenstown (Q)</option>
+            <option value="S">Southampton (S)</option>
+        </select>
+    </label>
+
+    <button type="submit">Predict</button>
+</form>
+
+{% if prediction_text %}
+    <div class="result">{{ prediction_text }}</div>
+{% endif %}
+
+</body>
+</html>
