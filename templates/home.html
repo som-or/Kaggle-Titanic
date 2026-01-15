@@ -21,7 +21,7 @@
 
 <form action="{{ url_for('predict') }}" method="post">
     <label>PassengerId
-        <input type="number" name="PassengerId" required>
+        <input type="number" name="PassengerId" value="0">
     </label>
 
     <label>Pclass
@@ -33,7 +33,7 @@
     </label>
 
     <label>Name
-        <input type="text" name="Name" required>
+        <input type="text" name="Name" value="Unknown">
     </label>
 
     <label>Sex
@@ -44,19 +44,19 @@
     </label>
 
     <label>Age
-        <input type="number" name="Age" step="0.01">
+        <input type="number" name="Age" step="0.01" required>
     </label>
 
     <label>SibSp (siblings / spouses aboard)
-        <input type="number" name="SibSp" required>
+        <input type="number" name="SibSp" value="0">
     </label>
 
     <label>Parch (parents / children aboard)
-        <input type="number" name="Parch" required>
+        <input type="number" name="Parch" value="0">
     </label>
 
     <label>Ticket
-        <input type="text" name="Ticket">
+        <input type="text" name="Ticket" value="N/A">
     </label>
 
     <label>Fare
@@ -64,7 +64,7 @@
     </label>
 
     <label>Cabin
-        <input type="text" name="Cabin">
+        <input type="text" name="Cabin" value="N/A">
     </label>
 
     <label>Embarked
