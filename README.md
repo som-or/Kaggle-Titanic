@@ -8,9 +8,11 @@ This is a simple classification project using a Logistic Regression model traine
 
 ## Objective
 
-**Build a prediction API using Flask
-**Create a simple HTML template to provide a user-friendly interface for interacting with the API
-**Use scikit-learn pipelines and preprocessing transformers to build a single end-to-end workflow (preprocessing + model) that directly outputs predictions.
+* Build a prediction API using Flask
+
+* Create a simple HTML template to provide a user-friendly interface for interacting with the API
+
+* Use scikit-learn pipelines and preprocessing transformers to build a single end-to-end workflow (preprocessing + model) that directly outputs predictions.
 ## Project Structure
 
 ```
